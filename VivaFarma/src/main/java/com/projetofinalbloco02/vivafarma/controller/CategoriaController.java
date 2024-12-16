@@ -1,4 +1,4 @@
-package com.generation.farmacia.VivaFarma.Controller;
+package com.projetofinalbloco02.vivafarma.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.generation.farmacia.VivaFarma.Model.Categoria;
-import com.generation.farmacia.VivaFarma.Repository.CategoriaRepository;
+import com.projetofinalbloco02.vivafarma.model.Categoria;
+import com.projetofinalbloco02.vivafarma.repository.CategoriaRepository;
 
 import jakarta.validation.Valid;
 
@@ -44,7 +44,7 @@ public class CategoriaController {
 	
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Categoria>> getByNome(@PathVariable String nome){
-		return ResponseEntity.ok(categoriaRepository.findAllBYNomeContainingIgnoreCase(nome));
+		return ResponseEntity.ok(categoriaRepository.findAllByNomeContainingIgnoreCase(nome));
 	}
 
 	@PostMapping
